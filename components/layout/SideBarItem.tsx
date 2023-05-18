@@ -39,7 +39,7 @@ const  SideBarItem: React.FC<SideBarItemProps> = ({
         }
 
 
-    },[router,onClick, auth,href,loginModal,router,currentUser])
+    },[router,onClick, auth,href,loginModal,currentUser])
     return(
         
         <div onClick={handleClick} className="flex flex-row items-center">
