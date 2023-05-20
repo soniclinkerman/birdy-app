@@ -4,6 +4,7 @@ import { data } from "autoprefixer";
 import { useRouter } from "next/router";
 import React, { useCallback } from "react";
 import { IconType } from "react-icons";
+import { BsDot } from "react-icons/bs";
 
 interface SideBarItemProps {
     label: string;
@@ -11,6 +12,7 @@ interface SideBarItemProps {
     icon: IconType
     onClick?: () => void;
     auth?: Boolean;
+    alert?: boolean
 }
 
 const  SideBarItem: React.FC<SideBarItemProps> = ({
@@ -18,7 +20,8 @@ const  SideBarItem: React.FC<SideBarItemProps> = ({
     href,
     icon: Icon,
     onClick,
-    auth
+    auth,
+    alert
 }) => {
 
     const loginModal = useLoginModal();
@@ -60,6 +63,7 @@ const  SideBarItem: React.FC<SideBarItemProps> = ({
             "
             >
                <Icon size={28} color="white"/>
+               {alert ? <BsDot className="text-sky-500 absolute -top-4 left-0" size={70}/>: null}
             </div>
 
             <div
@@ -79,6 +83,7 @@ const  SideBarItem: React.FC<SideBarItemProps> = ({
                 <p className="hidden lg:block text-white text-xl">
                     {label}
                 </p>
+                 {alert ? <BsDot className="text-sky-500 absolute -top-4 left-0" size={70}/>: null}
 
                 
             </div>
